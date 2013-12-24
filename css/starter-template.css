@@ -9,6 +9,7 @@ html, body
 
 #main
 {
+	margin-left: 10px;
 	margin-top: 0px;
 	height: 100%;
 	width: 100%;
@@ -33,9 +34,10 @@ html, body
 	margin-left: 0px;
 	margin-right: auto;
 
-	/*background-image: url('img/main/navbar_bg.jpg');*/
-	border-right: 10px;
-	background-color: grey-white;
+	/* background-image: url('img/main/navbar_bg.jpg'); */
+	
+	opacity: 20%;
+
 	background-size: 100% auto;
 	background-repeat: repeat-y;
 
@@ -93,7 +95,7 @@ sub
 	text-align: center;
 	font-size: 16px;
 	font-family: Helvetica;
-	font-color: #333333;
+	color: #333333;
 }
 
 sub:hover
@@ -104,7 +106,8 @@ sub:hover
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	font-size: 30px;
+	font-size: 16px;
 	font-family: Helvetica;
-	font-color: red;
+	color: #333333;
+
 }
