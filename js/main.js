@@ -5,7 +5,7 @@ var main_content = 'div#main_content';
 function pageClick(page)
 {
 
-	$(main_content).fadeOut( "slow", function() { pageUpdate(page) });
+	$(main_content).fadeOut( "fast", function() { pageUpdate(page) });
 }
 
 function pageUpdate(page)
@@ -18,7 +18,7 @@ function pageUpdate(page)
 
 	$.ajax(pagereq);		
 
-	$(main_content).fadeIn( "slow", function() { });
+	$(main_content).fadeIn( "fast", function() { });
 		
 
 }

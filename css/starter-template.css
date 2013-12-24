@@ -4,15 +4,21 @@ html, body
 
 	margin: 0px;
 	padding: 0px;
+	background-color: lightblue;
+	background-image: url('img/main/bg.png'); 	
 }
 
 
 #main
 {
-	margin-left: 10px;
+	margin-left: 0px;
 	margin-top: 0px;
 	height: 100%;
 	width: 100%;
+
+	padding-left:10px;
+	padding-right:10px;
+
 }
 
 
@@ -26,6 +32,7 @@ html, body
 
 #side_nav 
 {
+	background-color: white;
 
 	width: 225px;
 	height: 100%;
@@ -34,7 +41,6 @@ html, body
 	margin-left: 0px;
 	margin-right: auto;
 
-	/* background-image: url('img/main/navbar_bg.jpg'); */
 	
 	opacity: 20%;
 
@@ -45,6 +51,9 @@ html, body
 	float: left;
 	position: fixed;
 	overflow: scroll;
+
+	border-left: 2px solid #333333;
+	border-right: 2px solid #333333;
 }
 
 
@@ -82,7 +91,7 @@ html, body
 	padding-bottom: 10px;
 	padding-left: 10px;
 	padding-right: 0px;
-	width: 225px;
+	width: 200px;
 }
 
 sub
