@@ -1,0 +1,110 @@
+html, body
+{
+	height: 100%;
+
+	margin: 0px;
+	padding: 0px;
+}
+
+
+#main
+{
+	margin-top: 0px;
+	height: 100%;
+	width: 100%;
+}
+
+
+#main_hdr
+{
+	padding-bottom: 15px;
+	margin-bottom: 0px;
+	position: absolute;
+
+}
+
+#side_nav 
+{
+
+	width: 225px;
+	height: 100%;
+
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: auto;
+
+	/*background-image: url('img/main/navbar_bg.jpg');*/
+	border-right: 10px;
+	background-color: grey-white;
+	background-size: 100% auto;
+	background-repeat: repeat-y;
+
+
+	float: left;
+	position: fixed;
+	overflow: scroll;
+}
+
+
+#main_frame
+{
+	margin-left : 225px;
+}
+
+#main_content
+{
+	width: auto;
+	position: relative;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	padding-left: 50px;
+	padding-right: 50px;
+
+}
+
+.sidebar-thumbnail
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90px;
+
+}
+
+.sidebar-logo
+{
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 0px;
+	width: 225px;
+}
+
+sub
+{
+	display: block;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 16px;
+	font-family: Helvetica;
+	font-color: #333333;
+}
+
+sub:hover
+{
+	display: block;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 30px;
+	font-family: Helvetica;
+	font-color: red;
+}
