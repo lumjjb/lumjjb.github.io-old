@@ -1,59 +1,135 @@
-#wrap {
-width:750px;
-margin:0 auto;
-background:#99c;
-}	
+html, body
+{
+	height: 100%;
 
-#header {
-padding:5px 10px;
-background:#ddd;
+	margin: 0px;
+	padding: 0px;
+/*background-image: url('img/main/bg.png'); 	*/
+		background-color: white;
+
 }
 
 
-#nav {
-padding:5px 10px;
-background:#c99;
-}
+#main
+{
+	margin-left: 0px;
+	margin-top: 0px;
+	height: 100%;
+	width: 100%;
 
-#main {
-float:right;
-width:480px;
-padding:10px;
-background:#9c9;
-}
-#sidebar {
-float:left;
-width:230px;
-padding:10px;
-background:#99c;
-}
-#footer {
-clear:both;
-padding:5px 10px;
-background:#cc9;
-}
-#footer p {
-margin:0;
-}
+	padding-left:10px;
+	padding-right:10px;
 
-#nav ul {
-margin:0;
-padding:0;
-list-style:none;
-}
-#nav li {
-display:inline;
-margin:0;
-padding:0;
 }
 
 
+#main_hdr
+{
+	padding-bottom: 15px;
+	margin-bottom: 0px;
+	position: absolute;
 
-/* Header CSS Modifiers */
-h1 {
-margin:0;
 }
 
-h2 {
-margin:0 0 1em;
+#side_nav 
+{
+	background-color: white;
+
+	width: 225px;
+	height: 100%;
+
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: auto;
+
+	
+	opacity: 20%;
+
+	background-size: 100% auto;
+	background-repeat: repeat-y;
+
+
+	float: left;
+	position: fixed;
+	overflow: scroll;
+
+	border-left: 2px solid #333333;
+	border-right: 2px solid #333333;
+
+
+}
+
+.active
+{
+	background-color: #ff00ff;
+}
+
+li.active {
+    background-color: red; // for example
+    color:red;
+}
+
+#main_frame
+{
+
+	padding-left : 230px;
+}
+
+#main_content
+{
+	width: auto;
+	position: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	padding-left: 50px;
+	padding-right: 50px;
+
+}
+
+.sidebar-thumbnail
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90px;
+
+}
+
+.sidebar-logo
+{
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 0px;
+	width: 200px;
+}
+
+sub
+{
+	display: block;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 16px;
+	font-family: Helvetica;
+	color: #333333;
+}
+
+sub:hover
+{
+	display: block;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 16px;
+	font-family: Helvetica;
+	color: #333333;
+
 }

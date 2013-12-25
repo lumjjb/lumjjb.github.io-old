@@ -5,6 +5,12 @@ $('ul.nav-pills li a').click(function (e) {
   $(this).parent('li').addClass('active')
 })
 
+function navSetActive(key)
+{
+	navRemoveAllActive();
+	$("#sb_" + key).addClass('active');
+}
+
 function navRemoveAllActive()
 {
   $('ul.nav-pills li.active').removeClass('active');

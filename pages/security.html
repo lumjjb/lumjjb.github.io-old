@@ -2,3 +2,41 @@
 <p> Description about security</p>
 
 <h2>Bunch of divs of projects </h2>
+
+
+<!-- Project sections to add thumbnails -->
+<projects>
+</projects>
+
+<!-- Honors sections to add thumbnails -->
+<honors>
+</honors>
+
+<!-- Article section to add thumbnails -->
+<articles>
+</articles>
+
+<script>
+var thumbnails = 
+[
+	// Article Noscript
+	{ 
+		section: "articles", 
+		title: "Javascript Blocker ‘NoScript’ may give you a false sense of security with default settings", 
+		text: "The purpose of Javascript blockers such as “NoScript” for Firefox help to block javascript from running on untrusted sites. However, with the default settings of “NoScript”, attackers can make use of trusted domains to host and deliver their javascript.",
+		img: "img/security/noscript/noscript.jpg",
+		page: "security/noscript.html"
+	},
+	//Thumbnail 2
+	{ 
+		section: "projects", 
+		title: "Title 2", 
+		text: "This is some text 2",
+		img: "img/sidebar/security_logo.png",
+		page: "security.html"
+	}
+]
+
+spawnThumbnails(thumbnails);
+
+</script>
