@@ -64,10 +64,6 @@ html, body
 	background-color: #ff00ff;
 }
 
-li.active {
-    background-color: red; // for example
-    color:red;
-}
 
 #main_frame
 {
