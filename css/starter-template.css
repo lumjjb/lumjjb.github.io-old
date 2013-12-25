@@ -54,8 +54,19 @@ html, body
 
 	border-left: 2px solid #333333;
 	border-right: 2px solid #333333;
+
+
 }
 
+.active
+{
+	background-color: #ff00ff;
+}
+
+li.active {
+    background-color: red; // for example
+    color:red;
+}
 
 #main_frame
 {
