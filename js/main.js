@@ -30,7 +30,6 @@ function pageUpdate(page)
 
 	$.ajax(pagereq);		
 
-	$(main_content).fadeIn( "fast", function() { });
 		
 
 }
@@ -38,6 +37,8 @@ function pageUpdate(page)
 function updateMainContent(content) 
 { 
 	$(main_content).html(content); 
+	$(main_content).fadeIn( "fast", function() { });
+
 }
 
 

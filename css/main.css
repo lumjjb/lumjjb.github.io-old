@@ -51,7 +51,8 @@ html, body
 
 	float: left;
 	position: fixed;
-	overflow: scroll;
+	overflow-y: auto;
+	
 
 	border-left: 2px solid #333333;
 	border-right: 2px solid #333333;
