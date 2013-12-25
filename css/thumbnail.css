@@ -1,0 +1,35 @@
+.thumbnail
+{
+	float: left;
+	margin: 5px;
+}
+
+.thumbnail.right-caption > img {
+    float: left;
+    margin-right: 9px;
+    margin-bottom: 1px;
+    width: 150px;
+    height: 150px;
+}
+
+.thumbnail.right-caption {
+	width: 500px;
+    float: left;
+}
+
+.thumbnail.right-caption > .caption {
+    padding: 4px;
+
+}
+
+.thumbnail:hover
+{
+	opacity: 40%;
+	background-color: #DDEEFF;
+}
+.visited
+{
+
+	background-color: #BBBBBB;
+	opacity: 20%;
+}
