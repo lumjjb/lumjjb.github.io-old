@@ -1,0 +1,51 @@
+<script src="js/topic_toolbar.js"></script>
+<div class="topic_toolbar"></div>
+
+<style>
+img { display:block;margin-left: auto; margin-right: auto; width:80%;}
+</style>
+<h1>Using Google's trust to exploit users and spread malware</h1>
+
+
+
+About 2 weeks ago I happened to find this issue within one of google's web applications which allows a user to run malicious scripts in the background by linking a google domain link (i.e. <span style="text-decoration:underline;">http://www.google.com/...</span>) to an unsuspecting user. The problem here lies in the Google Images feature from google.
+<blockquote><p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+<span style="color:#ff0000;"> <strong>Note: This vulnerability has not been patched (as of 8/11/10).<br />
+</strong></span></p>
+<p>However, I have informed Google about it. Their reply is as follows:</p>
+<p>&#8220;While it&#8217;s possible this could be used to trick some users into visiting a site they wouldn&#8217;t ordinarily click, it would be impossible to provide a useful service without doing this.&#8221;<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p></blockquote>
+<h3>This article will be broken down into 4 sections:</h3>
+I. How the vulnerability works <BR>
+II. Vulnerability PoC Video <BR>
+III. Impact of the vulnerability <BR>
+IV. Possible solutions <BR>
+<h3><span style="text-decoration:underline;">I. How the vulnerability works?</span></h3>
+<ol>
+	<li>When clicking to preview an image using the Google Images application, the user is brought to a domain http://www.google.com/imglanding?q=.... with all the variables to point the user to the image referenced.</li>
+	<li>Upon clicking, the image is loaded in the foreground while an &lt;iframe&gt; is loaded in the background with the domain of the picture. (Note: The top page is still google)</li>
+	<li>The iframe loads the domain content containing the malicious javascript and the malciious code is processed by the browser in the background without any user interaction required.</li>
+</ol>
+<h3><span style="text-decoration:underline;">II. Vulnerability PoC Video</span></h3>
+<p>The video below shows an example of a malicious link presented to the user. In the event that the user clicks on the link, he will be brought to the google site, and the malicious code will load from the domain of the image without any user consent or intervention. The video shows the malicious script redirecting the user to another website where he is prompted to download a malicious file.</p>
+
+<span class='embed-youtube' style='text-align:center; display: block;'><iframe class='youtube-player' type='text/html' width='590' height='362' src='http://www.youtube.com/embed/-oKgagr7ruo?version=3&#038;rel=1&#038;fs=1&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' frameborder='0'></iframe></span>
+
+<h3><span style="text-decoration:underline;">III. Impact of the Vulnerability</span></h3>
+<p>As long as Google crawls the page for the image, the attack will be possible. This vulnerability can lead to a one-click infection of a user's web browser through a trusted google domain link. This may result in the breach of trust of a link from a google domain. Besides providing the 'malicious' google domain links, it may also possible to use Search Engine Optimization (SEO) attacks to spread malware through this vulnerability.</p>
+<h3><span style="text-decoration:underline;">IV. Possible Solutions</span></h3>
+
+<p>
+I have thought of several possible solutions to counter this issue. Some of which are:
+<ul>
+	<li>A safe website parser/loader on the server end to allow showing of the website to the user, but not processing redirect or other potentially malicious script functions and data.</li>
+	<li>A warning message can be put to the user before he is redirected, or loads the site. The warning could appear when the user clicks close on the picture (which will bring him to the original site that was loaded in the background. For example, Facebook has a feature for its redirect page, <span style="text-decoration:underline;">http://www.facebook.com/l.php?…</span> where it warns the user before loading the page.</li>
+</ul>
+</p>
+
+<p>
+<a href="img/security/google-trust/googleimagesvuln_fb_link_ss.png" target="_new"><img class="aligncenter size-medium wp-image-54" title="GoogleImagesVuln - FB Link Redirection Warning" src="img/security/google-trust/googleimagesvuln_fb_link_ss.png" alt="Facebook Link Redirection Warning"  /></a>
+</p>
+<BR>
+<BR>
+<div class="topic_toolbar"></div>

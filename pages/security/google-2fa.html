@@ -1,0 +1,78 @@
+<script src="js/topic_toolbar.js"></script>
+<div class="topic_toolbar"></div>
+
+<style>
+img { display:block;margin-left: auto; margin-right: auto; width:80%;}
+</style>
+<h1>Using Malware to Nullifying the '2' of 2FA (Google Accounts)</h1>
+
+
+The purposed of a 2FA system is to protect the user's account from being stolen/accessed when logging in from a computer which may have been compromised (It works because the the attacker doesn't have the 2FA token to login).
+
+The following article details a possibility of how a malware can make use of certain functions provided to give an attacker persistent access to a Google account without the use of the 2FA (even after the session has ended). Also included in the article are recommendations which would protect against such an attack.
+
+Note: For this to be possible, it will require one login on a compromised computer. 
+
+
+<blockquote><p>—————————————————————————————————————————————-<br>
+<span style="color:#ff0000;"> <strong>Note: This vulnerability has not been patched (as of 29/06/11). No feedback has been received by Google.</strong></span><br>
+—————————————————————————————————————————————–</p></blockquote>
+
+<h3>As usual, the article will be broken down into 4 sections:</h3>
+I. The Infection <BR>
+II. The Vulnerability <BR>
+III. Make it Malicious! <BR>
+IV. Recommendations<BR>
+<h3><span style="text-decoration:underline;">I. The Infection</span></h3>
+The scope here is a login on a compromised computer. Therefore, for a start, let us a look at the infection. In this case, the functions of a malware required would be:
+<ol>
+	<li>Keylogger - This will allow the malware to obtain the user's password</li>
+	<li>Man in the browser - The malware will use this to perform queries without the user's knowledge</li>
+	</ol>
+<h3><span style="text-decoration:underline;">II. The Vulnerability</span></h3>
+<p>The 2FA solution that Google provides comes with an option to authenticate an external device or application. How this works is that Google provides a specific password for the application which can be used on a third party email or instant messaging application. This provides the convenience of logging in without the use of a token. Thus, the main goal is to request and obtain an application password, which will allow us to access the Google account without the possession or control of the 2FA token from another system.</p>
+
+<p><a href="img/security/google-2fa/vuln.png" target="_new">
+<img src="img/security/google-2fa/vuln.png" title="Google Application Password Request"  >
+</a></p>
+
+<p>Thankfully, Google has a security mechanism against that. They require the entering of the password in order to go to the application password request page. However, given the knowledge and capability of the malware (as detailed in Section I), this safeguard can easily be bypassed. Thereafter, the attacker can use the requested application password to login without the use of the 2FA token.</p>
+
+<p><a href="img/security/google-2fa/thunderbirdsett2.png" target="_new">
+<img src="img/security/google-2fa/thunderbirdsett2.png" title="Google Application Password Request" >
+</a></p>
+<p>As highlighted, we can see that through obtaining this password, we can gain access to the account indefinitely, unless the user revokes the password. However, there are several considerations:
+<ol>
+<li>A user will not frequent the application password request page once his applications are locked in</li>
+<li>Google does not send you an e-mail/text message when a new application has been authorized</li>
+<li>In the case of infection, man-in-the-browser can hide the evidence of a breach</li>
+</ol>
+</p>
+<h3><span style="text-decoration:underline;">III. Make it Malicious!</span></h3>
+Weaponizing the exploit in a malware:
+<ol>
+<li>Detect user login (Log user ID and password) </li>
+<li>After user logs in, use password retrieved to request password application) </li>
+<li>Send application user ID and password to the attacker </li>
+<li>The attacker is given access to the account without user knowledge</li>
+</ol>
+<p>Although there is no weaponized exploit at the moment, there is a high possibility that such a function would be easily exploitable and integrated into exploit kits, especially with the leakage of Zeus source code. </p>
+
+<h3><span style="text-decoration:underline;">IV. Recommendations</span></h3>
+
+<h4><strong>1. Use of token required for critical functions</strong></h4>
+
+<p>The current implementation for critical functions (i.e. requesting application password) requires that the password to be re-entered. However, in the case of an infection, this password is regarded as known information to the attacker, giving access to important functions to the attacker. After all, it is the purpose of 2FA to offer protection against such malware attacks.</p>
+
+<p>Therefore, in order to limit what an attacker can do with a session, it is necessary to require the token be used for such critical functions.</p>
+
+<h4><strong>2. Inform the user when there is a new application added</strong></h4>
+
+<p>Once a user approves his/her applications, it is highly unlikely that he/she will revisit the application password request page to check on the approved applications. Also, there is no indication to the user that an application password has been requested.</p>
+
+<p>Therefore, through informing the user via Text Message (Phone), he/she would be aware if an unauthorized request has been made, and he/she can revoke the password immediately.</p>
+
+
+<BR>
+<BR>
+<div class="topic_toolbar"></div>
